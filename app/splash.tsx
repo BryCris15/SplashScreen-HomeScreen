@@ -5,20 +5,22 @@ import { Image, StyleSheet, Text, View } from "react-native";
 export default function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.replace("/");
+      router.replace("/(tabs)");
     }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <View style={styles.container}>
       <Image
         source={require("@/assets/images/logo-ecuador.png")}
         style={styles.logo}
       />
+
       <Text style={styles.title}>ECUADOR</Text>
+
       <Text style={styles.subtitle}>Selección Ecuatoriana de Fútbol</Text>
+
       <Text style={styles.worldcup}>Clasificados al Mundial 2026</Text>
     </View>
   );
@@ -31,8 +33,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  logo: { width: 220, height: 220, resizeMode: "contain" },
-  title: { fontSize: 42, fontWeight: "bold", color: "#001F5B", marginTop: 20 },
+  logo: {
+    width: 220,
+    height: 220,
+    resizeMode: "contain",
+  },
+  title: {
+    fontSize: 42,
+    fontWeight: "bold",
+    color: "#001F5B",
+    marginTop: 20,
+  },
   subtitle: {
     fontSize: 20,
     textAlign: "center",
