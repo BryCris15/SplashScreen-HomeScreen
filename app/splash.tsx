@@ -4,7 +4,9 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function SplashScreen() {
   useEffect(() => {
+    console.log("Splash iniciado, navegando en 3 segundos...");
     const timer = setTimeout(() => {
+      console.log("Intentando navegar a /(tabs)");
       router.replace("/(tabs)");
     }, 3000);
 
