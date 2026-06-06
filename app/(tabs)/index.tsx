@@ -1,32 +1,46 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text } from "react-native";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require("@/assets/images/fodo.png")}
+      resizeMode="cover"
+      style={styles.container}
+    >
       <Image
         source={require("@/assets/images/logo-ecuador.png")}
         style={styles.logo}
       />
+
       <Text style={styles.title}>ECUADOR</Text>
+
       <Text style={styles.subtitle}>Selección Ecuatoriana de Fútbol</Text>
+
       <Text style={styles.info}>Capitán: Enner Valencia</Text>
       <Text style={styles.info}>Entrenador: Sebastián Beccacece</Text>
-      <Text style={styles.info}>Mundiales: 2002, 2006, 2014, 2022, 2026</Text>
+      <Text style={styles.info}>Mundiales: 2002, 2006, 2014, 2022</Text>
+
       <Text style={styles.footer}>¡VAMOS LA TRI!</Text>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EFB810",
     alignItems: "center",
     justifyContent: "center",
     padding: 25,
   },
   logo: { width: 180, height: 180, marginBottom: 25, resizeMode: "contain" },
-  title: { fontSize: 42, fontWeight: "900", color: "#061A40" },
+  title: {
+    fontSize: 42,
+    fontWeight: "900",
+    color: "#061A40",
+    textShadowColor: "#FFFFFF",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
   subtitle: {
     fontSize: 18,
     fontWeight: "700",

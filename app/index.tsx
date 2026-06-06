@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { useEffect } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text } from "react-native";
 
 export default function SplashScreen() {
   useEffect(() => {
@@ -12,37 +12,48 @@ export default function SplashScreen() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={require("@/assets/images/fodos.png")}
+      resizeMode="cover"
+      style={styles.container}
+    >
+      <Text style={styles.topText}>SELECCIÓN ECUATORIANA</Text>
+
       <Image
         source={require("@/assets/images/logo-ecuador.png")}
         style={styles.logo}
       />
-      <Text style={styles.title}>ECUADOR</Text>
-      <Text style={styles.subtitle}>Selección Ecuatoriana de Fútbol</Text>
-      <Text style={styles.worldcup}>Clasificados al Mundial 2026</Text>
-    </View>
+
+      <Text style={styles.bottomText}>LA COPA MUNDIAL</Text>
+      <Text style={styles.bottomText}>DE LA FIFA 2026</Text>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EFB810",
     alignItems: "center",
     justifyContent: "center",
+    padding: 25,
   },
-  logo: { width: 250, height: 250, resizeMode: "contain", marginBottom: 20 },
-  title: { fontSize: 48, fontWeight: "bold", color: "#001F5B" },
-  subtitle: {
-    fontSize: 22,
-    color: "#001F5B",
+  topText: {
+    fontSize: 26,
+    fontWeight: "900",
+    color: "#061A40",
     textAlign: "center",
-    marginTop: 15,
+    marginBottom: 45,
   },
-  worldcup: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#D62828",
-    marginTop: 30,
+  logo: {
+    width: 240,
+    height: 240,
+    resizeMode: "contain",
+    marginBottom: 55,
+  },
+  bottomText: {
+    fontSize: 28,
+    fontWeight: "900",
+    color: "#061A40",
+    textAlign: "center",
   },
 });
