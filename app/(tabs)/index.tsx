@@ -1,4 +1,11 @@
-import { Image, ImageBackground, StyleSheet, Text } from "react-native";
+import {
+  Alert,
+  Button,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+} from "react-native";
 
 export default function HomeScreen() {
   return (
@@ -21,6 +28,16 @@ export default function HomeScreen() {
       <Text style={styles.info}>Mundiales: 2002, 2006, 2014, 2022</Text>
 
       <Text style={styles.footer}>¡VAMOS LA TRI!</Text>
+
+      <Button
+        title="Ver Información"
+        onPress={() =>
+          Alert.alert(
+            "La Tri",
+            "Selección Ecuatoriana clasificada al Mundial 2026",
+          )
+        }
+      />
     </ImageBackground>
   );
 }
